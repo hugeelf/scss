@@ -1,0 +1,31 @@
+@import "vars";
+@import "mixins";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//main code
+
+.site-title{
+    color: $tectColor;
+}
+
+.nav{
+    display: flex;
+    gap: $gap;
+    &__link{
+        text-decoration: none;
+    }
+}
+
+.content{
+    @include flexCenter;
+    gap: $gap;
+    &__item{
+        width: ($contentWidth - $gap * 3) / 4;
+        height: 200px;
+        border: $border;
+    }
+}

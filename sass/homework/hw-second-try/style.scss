@@ -1,0 +1,726 @@
+@import "vars-full";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// body{
+//     overflow: hidden;
+// }
+.content {
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - $siteWidth / 2);
+    padding-right: calc(50% - $siteWidth / 2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $colorBlack;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    position: relative;
+
+    &__left {
+        display: flex;
+        align-items: baseline;
+        gap: 41px;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+
+    & img {
+        cursor: pointer;
+    }
+}
+
+#hamburger,
+#profile,
+#cart {
+    position: absolute;
+    left: -999999px;
+    visibility: hidden;
+
+    &:checked~.nav {
+        right: -$navWidth;
+    }
+}
+
+.nav {
+    background: $bgWhite;
+    width: $navWidth;
+    box-shadow: 6px 4px 35px 0px #00000036;
+    padding: 33px;
+    position: absolute;
+    right: 0;
+    top: 82px;
+    transition: right .3s;
+    z-index: 1000;
+}
+
+.hamburger {
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__main-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style-type: none;
+
+        & a {
+            text-decoration: none;
+        }
+    }
+
+    &__menu__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+    }
+
+    &__subtitle {
+        color: $colorPink;
+        transition: all .3s;
+    }
+
+    &__subtitle:hover {
+        color: $colorBlack;
+    }
+
+    &__submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+
+        &__link {
+            list-style-type: none;
+            padding-left: 21px;
+
+            & a {
+                text-decoration: none;
+                color: $colorGray;
+                transition: all .3s;
+            }
+
+            & a:hover {
+                color: $colorPink;
+            }
+        }
+    }
+
+}
+
+.marketing {
+    background: $colorPinkBg;
+    display: flex;
+    align-items: center;
+    gap: 63px;
+
+    &__info {
+        border-left: 12px solid $colorPink;
+
+        &__title,
+        &__subtitle {
+            padding-left: 16px;
+        }
+
+        &__title {
+            color: $colorBlack;
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        &__subtitle {
+            color: $colorBlack;
+            font-size: 32px;
+            font-weight: 700;
+
+            &__pink {
+                color: $colorPink;
+            }
+        }
+    }
+}
+
+.offer {
+    padding-top: 65px;
+    padding-bottom: 161px;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        row-gap: $gap;
+
+        &_small {
+            display: flex;
+            flex-direction: row;
+            gap: $gap;
+        }
+
+    }
+
+    &__item {
+        width: calc(($siteWidth - $gap * 2) / 3);
+        position: relative;
+        display: flex;
+
+
+        &__img {
+            width: 100%;
+        }
+
+        &_big {
+            width: 100%;
+        }
+
+        &__description {
+            position: absolute;
+            text-align: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+
+    &__subtitle {
+        color: $bgWhite;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    &__title a {
+        font-size: 24px;
+        color: $colorPink;
+        text-decoration: none;
+        transition: color .3s;
+
+        &:hover {
+            color: $bgWhite;
+        }
+    }
+
+}
+
+.featured {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 95px;
+
+    &__title,
+    &__description {
+        text-align: center;
+    }
+
+    &__title {
+        color: $colorBlack;
+        font-size: 30px;
+        margin-bottom: 6px;
+    }
+
+    &__description {
+        color: $colorGrayText;
+        font-size: 14px;
+    }
+
+    &__grid {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $gap;
+    }
+
+    &__product {
+        width: calc(($siteWidth - $gap * 2) / 3);
+        display: flex;
+        flex-direction: column;
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__image {
+            width: 100%;
+        }
+
+        &__link {
+            // display: block;
+            position: relative;
+            width: 100%;
+        }
+
+        &__info {
+            padding: 25px 16px 20px 16px;
+            background: #F8F8F8;
+        }
+
+        &__name {
+            font-size: 13px;
+            color: $colorBlack;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        &__description {
+            color: #5D5D5D;
+            font-weight: 300;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        &__price {
+            color: $colorPink;
+        }
+    }
+
+    &__button {
+        color: $colorPink;
+        border: 1px solid $colorPink;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 14px 38px;
+        background: $bgWhite;
+        transition: all .3s;
+        font-size: 14px;
+
+        &:hover {
+            color: $bgWhite;
+            background: $colorPink;
+        }
+    }
+}
+
+.overlay__button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(58, 56, 56, 0.86);
+    opacity: 0;
+    transition: all .3s;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &__text {
+        border: 1px solid $bgWhite;
+        color: $bgWhite;
+        font-size: 14px;
+        padding: 9px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s;
+
+        &::before {
+            content: url(./img/cart.svg);
+            margin-right: 11px;
+        }
+    }
+
+}
+
+.benefits {
+    background: $colorBlack;
+    padding-top: 104px;
+    padding-bottom: 104px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: $gap;
+
+    &__item {
+        width: calc(($siteWidth - $gap * 2) / 3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__img {
+        margin-bottom: 28px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        color: $bgWhite;
+        font-size: 20px;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: normal;
+        color: #FBFBFB;
+    }
+}
+
+.testimonial {
+    width: calc(($siteWidth - $gap * 2) / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__img {
+        border-radius: 50%;
+        margin-bottom: 30px;
+    }
+
+    &__quote {
+        font-size: 20px;
+    }
+}
+
+.subscribe {
+    background: url(./img/subscribe_bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 86px;
+    padding-bottom: 126px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__form {
+        width: calc(($siteWidth - $gap * 2) / 3);
+        text-align: center;
+
+        // display: flex;
+        // flex-direction: column;
+        &__heading {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 167%;
+        }
+
+        &__description {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        &__email-label {
+            margin-bottom: 32px;
+        }
+
+        &__buttons {
+            display: flex;
+        }
+
+        &__button {
+            padding: 19px;
+            border: none;
+            display: inline-block;
+
+            &-email {
+                width: 100%;
+                font-size: 14px;
+                font-family: Lato;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                background-color: #E1E1E1;
+                border: 1px solid transparent;
+                box-sizing: border-box;
+                transition: border .3s;
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid $colorPink;
+                }
+            }
+
+            &-submit {
+                border: 1px solid transparent;
+                background: $colorPink;
+                color: $bgWhite;
+                font-size: 14px;
+                font-family: Lato;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+                box-sizing: border-box;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+.footer {
+    background: $colorBlack;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__corporate {
+        color: #FBFBFB;
+        font-size: 16px;
+        font-family: Lato;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__link {
+        text-decoration: none;
+        transition: color .3s;
+        color: #FBFBFB;
+        font-size: 16px;
+        font-family: Lato;
+        font-weight: 400;
+
+        &:hover {
+            color: $colorPink;
+        }
+    }
+
+    &__social__links {
+        display: flex;
+
+        & a:nth-last-child(n+2) {
+            margin-right: 7px;
+        }
+    }
+
+    &__social__link {
+        &>svg>path {
+            transition: fill .3s;
+        }
+
+        &:hover {
+            & .svg__bg {
+                fill: $colorPink;
+            }
+
+            & .svg__img {
+                fill: $bgWhite;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+    .nav {
+        top: 80px;
+    }
+
+    .center {
+        padding-left: calc(50% - $siteWidthLaptop / 2 + 16px);
+        padding-right: calc(50% - $siteWidthLaptop / 2 + 16px);
+    }
+
+    .marketing {
+        justify-content: flex-end;
+        gap: 40px;
+
+        &__img {
+            max-width: $siteWidthLaptop / 2;
+        }
+
+        &__info {
+            &__title {
+                font-size: 44px;
+            }
+
+            &__subtitle {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .offer {
+        padding-top: $gapLaptop;
+        padding-bottom: 154px;
+
+        &__items {
+            gap: $gapLaptop;
+
+            &_small {
+                gap: $gapLaptop;
+            }
+        }
+
+        &__subtitle {
+            font-size: 16px;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+    }
+
+    .featured {
+        padding-bottom: 64px;
+
+        &__product {
+            width: calc(($siteWidthLaptop - $gapLaptop * 2) / 2 - 16px);
+        }
+
+        &__grid {
+            padding-top: 73px;
+            padding-bottom: 32px;
+        }
+    }
+
+    .benefits {
+        padding-top: 48px;
+        padding-bottom: 64px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        padding-top: 54px;
+        padding-bottom: 140px;
+        background-position: 22%;
+        gap: 80px;
+    }
+}
+
+@media(max-width: 767px) {
+    .nav {
+        top: 80px;
+    }
+
+    .center {
+        padding-left: calc(50% - $siteWidthMobile / 2 + 16px);
+        padding-right: calc(50% - $siteWidthMobile / 2 + 16px);
+    }
+
+    .mobile__hide {
+        display: none;
+    }
+
+    .marketing {
+        padding-top: 148px;
+        padding-bottom: 148px;
+        justify-content: center;
+
+        &__img {
+            display: none;
+        }
+
+        &__info {
+            &__title {
+                font-size: 38px;
+            }
+
+            &__subtitle {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .offer {
+        padding-bottom: 64px;
+
+        &__items {
+            &_small {
+                flex-direction: column;
+                gap: $gapMobile;
+            }
+        }
+
+        &__item {
+            width: calc(($siteWidthMobile - $gapMobile));
+        }
+
+    }
+
+    .featured {
+        padding-bottom: 96px;
+
+        &__grid {
+            padding-top: 64px;
+            padding-bottom: 40px;
+            gap: 16px;
+        }
+
+        &__product {
+            width: calc(($siteWidthMobile - $gapMobile));
+        }
+    }
+
+    .benefits {
+        padding-bottom: 81px;
+        flex-direction: column;
+        align-items: center;
+
+        &__item {
+            width: calc(($siteWidthMobile - $gapMobile));
+        }
+    }
+
+    .subscribe {
+        padding-bottom: 110px;
+        flex-direction: column;
+        gap: 59px;
+    }
+    .testimonial, .subscribe__form{
+        width: calc($siteWidthMobile - $gapMobile);
+    }
+    .testimonial{
+        &__quote{
+            font-size: 18px;
+        }
+    }
+    .subscribe{
+        background-position: 10%;
+        &__form{
+            &__description{
+                font-size: 14px;
+            }
+            &__button{
+                padding: 17px;
+            }
+        }
+    }
+    .footer{
+        flex-direction: column-reverse;
+        padding-top: 43px;
+        gap: 40px;
+    }
+}
