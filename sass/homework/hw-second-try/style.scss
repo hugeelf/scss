@@ -222,6 +222,225 @@
 
 }
 
+.breadcrumbs {
+    background: #F8F3F4;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__left__link {
+        text-decoration: none;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $colorPink;
+    }
+
+    &__right {
+
+        & ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__link {
+            text-decoration: none;
+            color: #636363;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+
+            &_active {
+                color: $colorPink;
+                font-weight: 700;
+            }
+        }
+    }
+
+
+}
+
+.slider {
+    position: relative;
+    padding-top: 11px;
+    padding-bottom: 42px;
+    background: #F7F7F7;
+    display: flex;
+    justify-content: center;
+
+    &__left,
+    &__right {
+        height: 47px;
+        width: 47px;
+        cursor: pointer;
+        position: absolute;
+        background: #D8D8D8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .svg__bg {
+            transition: fill .3s;
+        }
+
+        &:hover .svg__bg {
+            fill: $colorPink;
+        }
+    }
+
+    &__left {
+        left: 0;
+        top: 50%;
+    }
+
+    &__right {
+        right: 0;
+        top: 50%;
+    }
+}
+
+.properties {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &__info {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        background: $bgWhite;
+        position: absolute;
+        width: $siteWidth;
+        outline: 1px solid #EAEAEA;
+        z-index: 100;
+        top: -65px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__link {
+        &__main {
+            position: relative;
+            text-decoration: none;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            color: $colorPink;
+            margin-bottom: 12px;
+        }
+
+        &__line {
+            border-bottom: 3px solid $colorPink;
+            width: 63px;
+            margin-bottom: 12px;
+
+            &__dark {
+                width: 641px;
+                border: 1px solid #EAEAEA;
+                margin-bottom: 65px;
+            }
+        }
+    }
+
+    &__heading {
+        color: #4D4D4D;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 48px;
+    }
+
+    &__subtitle {
+        max-width: 555px;
+        color: #5E5E5E;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+
+    &__price {
+        color: $colorPink;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 65px;
+    }
+
+    &__filter {
+        &__filter {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 23px;
+
+        }
+
+        &__item {
+            color: #6F6E6E;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 48px;
+
+            &::after {
+                content: url(./img/arrow.svg);
+
+
+            }
+        }
+    }
+
+    &__button {
+        border: 1px solid $colorPink;
+        padding: 15px 57px 15px 24px;
+        color: $colorPink;
+        background: transparent;
+        font-size: 16px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 23px;
+        cursor: pointer;
+        transition: all .3s;
+        & >svg > path{
+            transition: all .3s;
+        }
+        &:hover{
+            background: $colorPink;
+            color: $bgWhite;
+        }
+        &:hover > svg > path{
+            fill: $bgWhite;
+        }
+        // &::before{
+        //     content: url(./img/cart_pink.svg);
+        // }
+
+    }
+}
+
+.higer {
+    height: 664px;
+}
+
 .featured {
     display: flex;
     flex-direction: column;
@@ -699,26 +918,33 @@
         flex-direction: column;
         gap: 59px;
     }
-    .testimonial, .subscribe__form{
+
+    .testimonial,
+    .subscribe__form {
         width: calc($siteWidthMobile - $gapMobile);
     }
-    .testimonial{
-        &__quote{
+
+    .testimonial {
+        &__quote {
             font-size: 18px;
         }
     }
-    .subscribe{
+
+    .subscribe {
         background-position: 10%;
-        &__form{
-            &__description{
+
+        &__form {
+            &__description {
                 font-size: 14px;
             }
-            &__button{
+
+            &__button {
                 padding: 17px;
             }
         }
     }
-    .footer{
+
+    .footer {
         flex-direction: column-reverse;
         padding-top: 43px;
         gap: 40px;
