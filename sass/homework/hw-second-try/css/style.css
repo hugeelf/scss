@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+input[type=radio] {
+  transform: scale(1.3);
+}
+
 summary {
   display: block;
 }
@@ -392,6 +396,12 @@ summary::-webkit-details-marker {
 .shipping-address__input:focus-visible {
   outline: none;
   border: 1px solid #F16D7F;
+}
+.shipping-address__input::-moz-placeholder {
+  color: #B1B1B1;
+}
+.shipping-address__input::placeholder {
+  color: #B1B1B1;
 }
 .shipping-address__button {
   padding: 11px 14px;
@@ -874,6 +884,93 @@ summary::-webkit-details-marker {
   font-weight: 300;
   line-height: normal;
   color: #FBFBFB;
+}
+
+.registration {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+.registration__form {
+  max-width: 360px;
+}
+.registration__heading {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.registration__gender {
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.registration__perks {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.registration__notify {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #B1B1B1;
+}
+
+.gender__radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.gender__name {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #222222;
+}
+
+.perk__heading {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #222222;
+}
+.perk__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.perk__description {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #222222;
+}
+.perk__benefit {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #222222;
+}
+.perk__benefit::before {
+  content: url(../img/check.svg);
+  margin-right: 22px;
 }
 
 .testimonial {
