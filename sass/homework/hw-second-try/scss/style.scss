@@ -1105,7 +1105,18 @@ summary::-webkit-details-marker {
         letter-spacing: 0em;
         text-align: left;
         color: #B1B1B1;
-
+    }
+    &__button{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        & path{
+            transition: fill .3s;
+        }
+        &:hover path{
+            fill: $colorPink;
+        }
     }
 }
 

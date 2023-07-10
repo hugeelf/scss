@@ -923,6 +923,18 @@ summary::-webkit-details-marker {
   text-align: left;
   color: #B1B1B1;
 }
+.registration__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.registration__button path {
+  transition: fill 0.3s;
+}
+.registration__button:hover path {
+  fill: #F16D7F;
+}
 
 .gender__radio {
   display: flex;
@@ -1147,6 +1159,39 @@ summary::-webkit-details-marker {
     padding-top: 73px;
     padding-bottom: 32px;
   }
+  .shopping-cart {
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+  .shopping-cart__buttons {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    gap: 48px;
+  }
+  .shopping-cart__products {
+    width: 100%;
+  }
+  .shopping-cart__product {
+    max-width: 100%;
+    width: 100%;
+  }
+  .shopping-cart__checkout {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .shipping-address {
+    width: 50%;
+  }
+  .checkout {
+    width: 50%;
+  }
+  .laptop__hide {
+    display: none;
+  }
   .benefits {
     padding-top: 48px;
     padding-bottom: 64px;
@@ -1154,6 +1199,12 @@ summary::-webkit-details-marker {
     justify-content: center;
     align-items: center;
     gap: 48px;
+  }
+  .registration__perks {
+    max-width: 354px;
+  }
+  .perk__heading, .perk__description, .perk__benefit {
+    font-size: 16px;
   }
   .subscribe {
     flex-direction: column;
