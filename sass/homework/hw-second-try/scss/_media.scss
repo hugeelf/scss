@@ -48,6 +48,11 @@
         }
     }
 
+    .filter-sort{
+        height: 81px;
+        padding-top: 24px;
+    }
+
     .featured {
         padding-bottom: 64px;
 
@@ -56,30 +61,33 @@
         }
 
         &__grid {
-            padding-top: 73px;
             padding-bottom: 32px;
         }
     }
-    
+
     .shopping-cart {
         flex-direction: column;
         align-items: center;
         gap: 64px;
-        &__buttons{
+
+        &__buttons {
             width: 100%;
             max-width: 100%;
             justify-content: center;
             gap: 48px;
         }
-        &__products{
+
+        &__products {
             width: 100%;
         }
-        &__product{
+
+        &__product {
             max-width: 100%;
             width: 100%;
 
         }
-        &__checkout{
+
+        &__checkout {
             max-width: 100%;
             display: flex;
             flex-direction: row;
@@ -87,14 +95,15 @@
         }
     }
 
-    .shipping-address{
-        width: 50%;;
-    }
-    .checkout{
+    .shipping-address {
         width: 50%;
     }
 
-    .laptop__hide{
+    .checkout {
+        width: 50%;
+    }
+
+    .laptop__hide {
         display: none;
     }
 
@@ -107,14 +116,17 @@
         gap: 48px;
     }
 
-    .registration{
-        &__perks{
+    .registration {
+        &__perks {
             max-width: 354px;
         }
     }
 
-    .perk{
-        &__heading, &__description, &__benefit{
+    .perk {
+
+        &__heading,
+        &__description,
+        &__benefit {
             font-size: 16px;
         }
     }
@@ -140,6 +152,45 @@
 
     .mobile__hide {
         display: none;
+    }
+
+    .breadcrumbs {
+        flex-direction: column;
+        // padding-top: 24px;
+        // padding-bottom: 46px;
+        gap: 32px;
+    }
+
+    .filter {
+        &[open] {
+            box-shadow: none;
+        }
+
+        &-sort {
+            padding-top: 24px;
+            height: 100px;
+        }
+
+        &__summary {
+            padding-left: 0;
+
+            & svg {
+                width: 37px;
+                height: 25px;
+            }
+        }
+
+        &__content {
+            width: auto;
+        }
+    }
+
+    .sort {
+        gap: 5px;
+
+        &__heading {
+            font-size: 12px;
+        }
     }
 
     .marketing {
@@ -185,10 +236,40 @@
             padding-top: 64px;
             padding-bottom: 40px;
             gap: 16px;
+
+            &_no-top-padding {
+                padding-top: 0;
+            }
         }
 
         &__product {
             width: calc(($siteWidthMobile - $gapMobile));
+        }
+    }
+
+    .slider {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .properties {
+        &__info {
+            top: 0;
+            outline: none;
+            border-top: 1px solid #EAEAEA;
+            border-bottom: 1px solid #EAEAEA;
+        }
+
+        &__filter__item {
+            font-size: 10px;
+        }
+
+        &__subtitle {
+            max-width: 304px;
+        }
+
+        &__link__line__dark {
+            max-width: 175px;
         }
     }
 
@@ -201,7 +282,72 @@
             width: calc(($siteWidthMobile - $gapMobile));
         }
     }
+    .shopping-cart{
+        display: flex;
+        flex-direction: column;
+        &__buttons{
+            padding-bottom: 48px;
+        }
+        &__button{
+            font-size: 12px;
+            padding: 9px 17px;
+            &_proceed{
+                text-align: center;
+                padding: 15px 23px;
+                font-size: 16px;
+            }
+        }
+    }
+    .product{
+        &__img{
+            max-height: 180px;
+        }
+        &__info{
+            padding: 0;
+            padding-left: 17px;
+            gap: 4px;
+        }
+        &__name{
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 19.2px;
+        }
+        &__description{
+            font-size: 14px;
+            line-height: 16.8px;
+        }
+    }
 
+    .button__close {
+        top: 2px;
+        right: 12px;
+        & svg{
+            width: 10px;
+        }
+    }
+
+    .checkout{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .registration{
+        flex-direction: column;
+        &__notify{
+            margin-bottom: 39px;
+        }
+        &__perks{
+            padding-top: 40px;
+        }
+    }
+
+    .perk{
+        font-size: 16px;
+        &__heading, &__description, &__benefit{
+            font-size: 16px;
+            line-height: 19.2px;
+        }
+    }
     .subscribe {
         padding-bottom: 110px;
         flex-direction: column;
